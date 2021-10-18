@@ -34,7 +34,11 @@ android {
         abortOnError false
     }
     buildTypes {
+        debug {
+            buildConfigField("String", "VERSION_NAME", "\"${versioning.name}\"")
+        }
         release {
+            buildConfigField("String", "VERSION_NAME", "\"${versioning.name}\"")
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }

@@ -12,7 +12,7 @@ android {
 
     defaultConfig {
         applicationId 'eu.davidea.samples.flexibleadapter'
-        minSdkVersion minSdk
+        minSdkVersion 14
         targetSdkVersion targetSdk
         versionCode versioning.code
         versionName versioning.name
@@ -101,5 +101,4 @@ dependencies {
     testImplementation 'org.robolectric:robolectric:4.5.1'
     testImplementation 'junit:junit:4.13.2'
     testImplementation 'org.mockito:mockito-core:2.23.4'
-
 }
