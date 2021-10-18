@@ -1,26 +1,4 @@
 apply plugin: 'com.android.library'
-apply plugin: 'eu.davidea.grabver'
-
-versioning {
-    major 1
-    minor 0
-    patch 0
-    //preRelease "b6"
-    dependsOn "install"
-}
-// For maven repository
-version = versioning.name
-
-ext {
-    // Library Settings
-    libraryName = "FlexibleAdapter UI extension"
-    libraryDescription = "UI extension for FlexibleAdapter project"
-    libraryLabels = ['android', 'flexibleadapter', 'adapter', 'ui']
-
-    publishedGroupId = "eu.davidea"
-    bintrayName = "flexible-adapter-ui"
-    artifact = bintrayName
-}
 
 android {
     compileSdkVersion targetSdk
@@ -28,8 +6,8 @@ android {
     defaultConfig {
         minSdkVersion minSdk
         targetSdkVersion targetSdk
-        versionCode versioning.code
-        versionName versioning.name
+        versionCode libVersionCode
+        versionName libVersionName
     }
     buildTypes {
         release {
@@ -42,8 +20,4 @@ android {
 dependencies {
     compileOnly project(':flexible-adapter')
     implementation google.material
-}
-
-if (project.hasProperty('all') || project.hasProperty('ui')) {
-    apply from: '../maven-install.gradle'
 }

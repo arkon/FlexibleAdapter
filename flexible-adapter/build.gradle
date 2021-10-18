@@ -1,25 +1,5 @@
 apply plugin: 'com.android.library'
 apply plugin: 'com.vanniktech.android.javadoc'
-apply plugin: 'eu.davidea.grabver'
-
-versioning {
-    major 5
-    minor 1
-    patch 0
-    //preRelease = 'SNAPSHOT'
-    dependsOn 'install'
-}
-// For maven repository
-version = versioning.name
-
-ext {
-    // Library Settings
-    libraryDescription = "Fast and versatile Adapter for RecyclerView which regroups several features into one library to considerably improve the user experience :-)"
-    libraryLabels = ['android', 'recyclerview', 'list', 'adapter', 'selection', 'multi-select', 'actionmode', 'undo', 'viewholder', 'ripple', 'search', 'filter', 'filtering', 'async', 'asynchronous', 'item', 'item animator', 'itemanimator', 'animator', 'animation', 'expand', 'expandable', 'collapse', 'collapsible', 'section', 'sections', 'sticky', 'header', 'headers', 'category', 'footer', 'footers', 'drag', 'draggable', 'swipe', 'swipeable', 'leave behind', 'fastscroll', 'fastscroller', 'endless', 'endless scroll', 'load more']
-    publishedGroupId = "eu.davidea"
-    bintrayName = "flexible-adapter"
-    artifact = bintrayName
-}
 
 android {
     compileSdkVersion targetSdk
@@ -27,18 +7,18 @@ android {
     defaultConfig {
         minSdkVersion minSdk
         targetSdkVersion targetSdk
-        versionCode versioning.code
-        versionName versioning.name
+        versionCode libVersionCode
+        versionName libVersionName
     }
     lintOptions {
         abortOnError false
     }
     buildTypes {
         debug {
-            buildConfigField("String", "VERSION_NAME", "\"${versioning.name}\"")
+            buildConfigField("String", "VERSION_NAME", "\"${libVersionName}\"")
         }
         release {
-            buildConfigField("String", "VERSION_NAME", "\"${versioning.name}\"")
+            buildConfigField("String", "VERSION_NAME", "\"${libVersionName}\"")
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }

@@ -17,6 +17,9 @@ allprojects {
         minSdk = 14
         targetSdk = 30 // Android 11
 
+        libVersionCode = 30
+        libVersionName = "5.1.0"
+
         // AndroidX
         browserVer = '1.3.0'
         appCompatVer = '1.2.0'
@@ -109,19 +112,15 @@ buildscript {
     ext {
         gradle_plugin_version = '7.0.3'
         android_apt_version = '1.8'
-        maven_gradle_plugin_version = '2.1'
         javadoc_plugin_version = '0.3.0'
         android_junit5_version = '1.7.1.1'
-        grabver_version = '1.0.1'
     }
 
     dependencies {
         classpath "com.android.tools.build:gradle:$gradle_plugin_version"
         classpath "com.neenbedankt.gradle.plugins:android-apt:$android_apt_version"
-        classpath "com.github.dcendents:android-maven-gradle-plugin:$maven_gradle_plugin_version"
         classpath "com.vanniktech:gradle-android-javadoc-plugin:$javadoc_plugin_version"
         classpath "de.mannodermaus.gradle.plugins:android-junit5:$android_junit5_version"
-        classpath "eu.davidea:grabver:$grabver_version"
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
     }
